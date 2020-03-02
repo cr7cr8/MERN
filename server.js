@@ -1,12 +1,22 @@
 const express = require("express")
 const app = express();
-
+const path = require("path")
 const cors = require('cors');
 
 
 
 app.use(cors())
-app.use("/", (req, res) => {
+app.use(express.static("client/build"))
+
+console.log("aaa")
+
+app.get("/front",(req,res)=>{
+
+    res.sendFile(path.resolve(__dirname,"client","build","index.html"))
+
+})
+
+app.use("/api", (req, res) => {
 
     console.log("in server ====");
 

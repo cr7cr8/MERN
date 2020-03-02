@@ -5,11 +5,23 @@
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start":"concurrently \"npm run server\" \"npm run client\"",
+
+
+    "start":"node server.js",
+    "start2":"concurrently \"npm run server\" \"npm run client\"",
+
+
+
     "server2": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",    
+    "pro":"concurrently \"nodemon server.js\" \"serve -s client/build\"",
+    "front":"serve -s client/build",
+    "back":"node server.js",
+ 
+    "both":"node server.js & serve -s client/build" ,
+    "windowsboth":"start node server.js && start serve -s client/build" 
   },
   "author": "",
   "license": "ISC",

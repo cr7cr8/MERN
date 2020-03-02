@@ -17,8 +17,8 @@ class App extends Component {
   }
   componentDidMount = () => {
 
-    axios.get("http://127.0.0.1")
-
+    //axios.get("http://127.0.0.1/api")
+    axios.get("/api")
 
       .then(result => {
         console.log(result)
